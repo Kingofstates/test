@@ -3,19 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Permission Demo</title>
+<title>Private User Page</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Browser Permission Demo</h1>
-
-<button onclick="startCamera()">Allow Camera</button>
-<button onclick="getLocation()">Allow Location</button>
-
-<div class="box">
-<video id="video" autoplay playsinline></video>
-<p id="location">Location: Not requested</p>
+<div class="container">
+    <h1>Your Personal Page</h1>
+    <p id="status">Checking session...</p>
 </div>
 
 <script src="script.js"></script>
