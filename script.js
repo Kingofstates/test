@@ -1,27 +1,27 @@
-async function startCamera() {
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-    document.getElementById("video").srcObject = stream;
-  } catch (err) {
-    alert("Camera permission denied");
-  }
-}
+const statusText = document.getElementById("status");
 
-function getLocation() {
-  if (!navigator.geolocation) {
-    alert("Geolocation not supported");
-    return;
-  }
+const params = new URLSearchParams(window.location.search);
+const token = params.get("id");
 
-  navigator.geolocation.getCurrentPosition(
-    (pos) => {
-      const lat = pos.coords.latitude;
-      const lon = pos.coords.longitude;
-      document.getElementById("location").innerText =
-        "Location: " + lat + ", " + lon;
-    },
-    () => {
-      alert("Location permission denied");
-    }
-  );
+if (!token) {
+    statusText.innerText = "Invalid or missing link ❌";
+} else {
+    fetch("https://test2-1o72.onrender.com/visit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ token: token })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "sent") {
+            statusText.innerText = "Connected successfully ✔️";
+        } else {
+            statusText.innerText = "Invalid session ❌";
+        }
+    })
+    .catch(error => {
+        statusText.innerText = "Server not responding ⚠️";
+    });
 }
