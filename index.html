@@ -2,155 +2,224 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Amazon.com. Spend less. Smile more.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header / Navigation Bar -->
-    <header class="header">
-        <div class="nav-belt">
-            <div class="nav-left">
-                <a href="#" class="nav-logo">
-                    <span class="logo-text">amazon<span class="logo-dot">.</span><span class="logo-country">in</span></span>
+    <!-- Mobile & Desktop Header -->
+    <header class="amz-header">
+        <div class="header-top">
+            <div class="header-left">
+                <a href="#" class="amz-logo">
+                    <span class="logo-main">amazon</span><span class="logo-dot">.</span><span class="logo-domain">com</span>
                 </a>
-                <div class="nav-address">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <span class="add-line1">Delivering to New York 10001</span>
-                        <span class="add-line2">Update location</span>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-signin">Sign in <i class="fa-solid fa-angle-right"></i></a>
+                <a href="#" class="header-cart" id="cartBtn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="header-search-bar">
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search Amazon or enter keyword">
+                <i class="fa-solid fa-camera camera-icon"></i>
+            </div>
+        </div>
+
+        <!-- Delivery Sub-bar -->
+        <div class="header-delivery">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Deliver to <strong>New York 10001</strong></span>
+            <i class="fa-solid fa-chevron-down down-arrow"></i>
+        </div>
+
+        <!-- Horizontal Category Pill Nav -->
+        <nav class="category-nav">
+            <a href="#" class="cat-pill active">All</a>
+            <a href="#" class="cat-pill">Prime</a>
+            <a href="#" class="cat-pill">Deals</a>
+            <a href="#" class="cat-pill">Grocery</a>
+            <a href="#" class="cat-pill">Electronics</a>
+            <a href="#" class="cat-pill">Fashion</a>
+            <a href="#" class="cat-pill">Home</a>
+            <a href="#" class="cat-pill">Beauty</a>
+            <a href="#" class="cat-pill">Books</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="amz-main">
+        <!-- Hero Banner Carousel / Promo -->
+        <section class="hero-banner">
+            <div class="banner-content">
+                <span class="prime-tag"><i class="fa-solid fa-check"></i> prime</span>
+                <h1>Welcome to Amazon Enterprise</h1>
+                <p>Shop millions of products with fast, reliable delivery and secure checkout.</p>
+                <button class="shop-now-btn" id="exploreBtn">Explore Top Deals</button>
+            </div>
+        </section>
+
+        <!-- Product Cards Grid -->
+        <section class="product-section">
+            <div class="section-title">
+                <h2>Trending in Electronics</h2>
+                <a href="#">See all</a>
+            </div>
+            <div class="product-grid">
+                <div class="product-card" data-title="Wireless Noise-Canceling Headphones">
+                    <div class="prod-img" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="prod-info">
+                        <span class="badge-deal">Limited time deal</span>
+                        <h3>Wireless Noise-Canceling Headphones</h3>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span>12,450</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="currency">$</span><span class="dollar">79</span><span class="cents">99</span>
+                            <span class="list-price">$149.99</span>
+                        </div>
+                        <p class="prime-delivery">FREE delivery <strong>Tomorrow</strong></p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-title="Smart 4K Ultra HD TV">
+                    <div class="prod-img" style="background-image: url('https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="prod-info">
+                        <span class="badge-deal">Amazon's Choice</span>
+                        <h3>Smart 4K Ultra HD TV - 55 Inch</h3>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                            <span>8,920</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="currency">$</span><span class="dollar">349</span><span class="cents">00</span>
+                            <span class="list-price">$429.00</span>
+                        </div>
+                        <p class="prime-delivery">FREE delivery <strong>Sat, Nov 29</strong></p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-title="Ergonomic Office Chair">
+                    <div class="prod-img" style="background-image: url('https://images.unsplash.com/photo-1580481077494-e3299ac25e94?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="prod-info">
+                        <span class="badge-deal">Best Seller</span>
+                        <h3>Ergonomic Mesh Office Desk Chair</h3>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span>24,110</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="currency">$</span><span class="dollar">129</span><span class="cents">99</span>
+                            <span class="list-price">$189.99</span>
+                        </div>
+                        <p class="prime-delivery">FREE delivery <strong>Tomorrow</strong></p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-title="Professional DSLR Camera">
+                    <div class="prod-img" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="prod-info">
+                        <span class="badge-deal">Top Rated</span>
+                        <h3>Professional 4K Mirrorless Camera</h3>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span>3,540</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="currency">$</span><span class="dollar">899</span><span class="cents">00</span>
+                            <span class="list-price">$1,099.00</span>
+                        </div>
+                        <p class="prime-delivery">FREE delivery <strong>Sunday</strong></p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
-            <div class="nav-search">
-                <div class="nav-search-category">
-                    <span>All</span>
-                    <i class="fa-solid fa-caret-down"></i>
-                </div>
-                <input type="text" class="nav-search-input" placeholder="Search Amazon">
-                <button class="nav-search-btn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </div>
-            <div class="nav-right">
-                <div class="nav-item nav-lang">
-                    <i class="fa-solid fa-globe"></i>
-                    <span>EN</span>
-                </div>
-                <div class="nav-item">
-                    <span class="nav-line-1">Hello, Sign in</span>
-                    <span class="nav-line-2">Account & Lists <i class="fa-solid fa-caret-down"></i></span>
-                </div>
-                <div class="nav-item">
-                    <span class="nav-line-1">Returns</span>
-                    <span class="nav-line-2">& Orders</span>
-                </div>
-                <a href="#" class="nav-item nav-cart">
-                    <div class="cart-count">0</div>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="nav-line-2">Cart</span>
-                </a>
-            </div>
-        </div>
-        <div class="nav-main">
-            <div class="nav-main-left">
-                <button class="nav-all-menu" id="menuToggle">
-                    <i class="fa-solid fa-bars"></i> All
-                </button>
-                <a href="#">Today's Deals</a>
-                <a href="#">Customer Service</a>
-                <a href="#">Registry</a>
-                <a href="#">Gift Cards</a>
-                <a href="#">Sell</a>
-            </div>
-            <div class="nav-main-right">
-                <a href="#">Shop great deals now</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero / Banner Section -->
-    <main class="main-content">
-        <div class="hero-section">
-            <div class="hero-msg">
-                <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="#">Click here to go to amazon.in</a></p>
-            </div>
-        </div>
-
-        <!-- Product Cards Grid -->
-        <div class="shop-section">
-            <div class="box">
-                <h2>Revamp your home</h2>
-                <div class="box-content">
-                    <div class="box-image" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80');"></div>
-                    <p><a href="#">Shop home decor</a></p>
-                </div>
-            </div>
-            <div class="box">
-                <h2>Electronics & Gadgets</h2>
-                <div class="box-content">
-                    <div class="box-image" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80');"></div>
-                    <p><a href="#">See more audio & tech</a></p>
-                </div>
-            </div>
-            <div class="box">
-                <h2>Fashion Trends</h2>
-                <div class="box-content">
-                    <div class="box-image" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=500&q=80');"></div>
-                    <p><a href="#">Shop clothing & shoes</a></p>
-                </div>
-            </div>
-            <div class="box">
-                <h2>Health & Personal Care</h2>
-                <div class="box-content">
-                    <div class="box-image" style="background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=500&q=80');"></div>
-                    <p><a href="#">Explore wellness</a></p>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
 
+    <!-- Bottom Mobile Nav Bar (App style) -->
+    <nav class="bottom-nav">
+        <a href="#" class="bottom-nav-item active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>You</span>
+        </a>
+        <a href="#" class="bottom-nav-item" id="bottomCart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Cart</span>
+            <span class="bottom-cart-badge" id="bottomCartBadge">0</span>
+        </a>
+        <a href="#" class="bottom-nav-item" id="bottomMenu">
+            <i class="fa-solid fa-bars"></i>
+            <span>Menu</span>
+        </a>
+    </nav>
+
     <!-- Footer -->
-    <footer>
-        <div class="footer-btn">
-            <a href="#">Back to top</a>
+    <footer class="amz-footer">
+        <div class="back-to-top" id="backToTop">
+            <i class="fa-solid fa-chevron-up"></i> Back to top
         </div>
-        <div class="footer-links">
-            <ul>
-                <p>Get to Know Us</p>
-                <a href="#">Careers</a>
-                <a href="#">About Amazon</a>
-                <a href="#">Sustainability</a>
-            </ul>
-            <ul>
-                <p>Make Money with Us</p>
-                <a href="#">Sell on Amazon</a>
-                <a href="#">Protect & Build Your Brand</a>
-                <a href="#">Advertise Your Products</a>
-            </ul>
-            <ul>
-                <p>Amazon Payment Products</p>
-                <a href="#">Amazon Business Card</a>
-                <a href="#">Reload Your Balance</a>
-                <a href="#">Currency Converter</a>
-            </ul>
-            <ul>
-                <p>Let Us Help You</p>
-                <a href="#">Amazon and COVID-19</a>
-                <a href="#">Your Account</a>
-                <a href="#">Help</a>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-logo">
-                <span class="logo-text">amazon<span class="logo-dot">.</span></span>
-            </div>
-            <div class="footer-copyright">
-                © 1996-2026, Amazon.com, Inc. or its affiliates
-            </div>
+        <div class="footer-info">
+            <p>© 1996-2026, Amazon.com, Inc. or its affiliates. Enterprise Demo.</p>
         </div>
     </footer>
+
+    <!-- Side Menu Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay">
+        <div class="drawer-content" id="drawerContent">
+            <div class="drawer-header">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>Hello, Sign in</span>
+                <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="drawer-body">
+                <h3>Trending</h3>
+                <ul>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Movers & Shakers</a></li>
+                </ul>
+                <h3>Digital Content & Devices</h3>
+                <ul>
+                    <li><a href="#">Amazon Music</a></li>
+                    <li><a href="#">Kindle E-readers & Books</a></li>
+                    <li><a href="#">Amazon Appstore</a></li>
+                </ul>
+                <h3>Shop By Department</h3>
+                <ul>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Computers</a></li>
+                    <li><a href="#">Smart Home</a></li>
+                    <li><a href="#">Arts & Crafts</a></li>
+                </ul>
+                <h3>Help & Settings</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
