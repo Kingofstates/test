@@ -1,27 +1,50 @@
-const statusText = document.getElementById("status");
+document.addEventListener('DOMContentLoaded', () => {
+    // Search button click or Enter key action
+    const searchInput = document.querySelector('.nav-search-input');
+    const searchBtn = document.querySelector('.nav-search-btn');
 
-const params = new URLSearchParams(window.location.search);
-const token = params.get("id");
-
-if (!token) {
-    statusText.innerText = "Invalid or missing link ❌";
-} else {
-    fetch("https://test2-1o72.onrender.com/visit", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ token: token })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === "sent") {
-            statusText.innerText = "Connected successfully ✔️";
-        } else {
-            statusText.innerText = "Invalid session ❌";
+    const performSearch = () => {
+        const query = searchInput.value.trim();
+        if (query) {
+            alert(`Searching Amazon for: "${query}"`);
         }
-    })
-    .catch(error => {
-        statusText.innerText = "Server not responding ⚠️";
+    };
+
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
     });
-}
+
+    // Mobile menu toggle simulation
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle.addEventListener('click', () => {
+        alert('Amazon Navigation Menu opened!');
+    });
+
+    // Back to top smooth scroll
+    const backToTopBtn = document.querySelector('.footer-btn');
+    backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Cart interaction
+    let cartCount = 0;
+    const cartElement = document.querySelector('.cart-count');
+    
+    // Add interactive click to product links
+    const productLinks = document.querySelectorAll('.box-content p a');
+    productLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            cartCount++;
+            cartElement.textContent = cartCount;
+            alert(`Item added to cart! Total items: ${cartCount}`);
+        });
+    });
+});

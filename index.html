@@ -1,18 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Private User Page</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon.com. Spend less. Smile more.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header / Navigation Bar -->
+    <header class="header">
+        <div class="nav-belt">
+            <div class="nav-left">
+                <a href="#" class="nav-logo">
+                    <span class="logo-text">amazon<span class="logo-dot">.</span><span class="logo-country">in</span></span>
+                </a>
+                <div class="nav-address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <span class="add-line1">Delivering to New York 10001</span>
+                        <span class="add-line2">Update location</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-search">
+                <div class="nav-search-category">
+                    <span>All</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <input type="text" class="nav-search-input" placeholder="Search Amazon">
+                <button class="nav-search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="nav-right">
+                <div class="nav-item nav-lang">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>EN</span>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-line-1">Hello, Sign in</span>
+                    <span class="nav-line-2">Account & Lists <i class="fa-solid fa-caret-down"></i></span>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-line-1">Returns</span>
+                    <span class="nav-line-2">& Orders</span>
+                </div>
+                <a href="#" class="nav-item nav-cart">
+                    <div class="cart-count">0</div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="nav-line-2">Cart</span>
+                </a>
+            </div>
+        </div>
+        <div class="nav-main">
+            <div class="nav-main-left">
+                <button class="nav-all-menu" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i> All
+                </button>
+                <a href="#">Today's Deals</a>
+                <a href="#">Customer Service</a>
+                <a href="#">Registry</a>
+                <a href="#">Gift Cards</a>
+                <a href="#">Sell</a>
+            </div>
+            <div class="nav-main-right">
+                <a href="#">Shop great deals now</a>
+            </div>
+        </div>
+    </header>
 
-<div class="container">
-    <h1>Your Personal Page</h1>
-    <p id="status">Checking session...</p>
-</div>
+    <!-- Hero / Banner Section -->
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="hero-msg">
+                <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="#">Click here to go to amazon.in</a></p>
+            </div>
+        </div>
 
-<script src="script.js"></script>
+        <!-- Product Cards Grid -->
+        <div class="shop-section">
+            <div class="box">
+                <h2>Revamp your home</h2>
+                <div class="box-content">
+                    <div class="box-image" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80');"></div>
+                    <p><a href="#">Shop home decor</a></p>
+                </div>
+            </div>
+            <div class="box">
+                <h2>Electronics & Gadgets</h2>
+                <div class="box-content">
+                    <div class="box-image" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80');"></div>
+                    <p><a href="#">See more audio & tech</a></p>
+                </div>
+            </div>
+            <div class="box">
+                <h2>Fashion Trends</h2>
+                <div class="box-content">
+                    <div class="box-image" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=500&q=80');"></div>
+                    <p><a href="#">Shop clothing & shoes</a></p>
+                </div>
+            </div>
+            <div class="box">
+                <h2>Health & Personal Care</h2>
+                <div class="box-content">
+                    <div class="box-image" style="background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=500&q=80');"></div>
+                    <p><a href="#">Explore wellness</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-btn">
+            <a href="#">Back to top</a>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <p>Get to Know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">About Amazon</a>
+                <a href="#">Sustainability</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a href="#">Sell on Amazon</a>
+                <a href="#">Protect & Build Your Brand</a>
+                <a href="#">Advertise Your Products</a>
+            </ul>
+            <ul>
+                <p>Amazon Payment Products</p>
+                <a href="#">Amazon Business Card</a>
+                <a href="#">Reload Your Balance</a>
+                <a href="#">Currency Converter</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a href="#">Amazon and COVID-19</a>
+                <a href="#">Your Account</a>
+                <a href="#">Help</a>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <span class="logo-text">amazon<span class="logo-dot">.</span></span>
+            </div>
+            <div class="footer-copyright">
+                © 1996-2026, Amazon.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
